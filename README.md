@@ -1,5 +1,14 @@
 # PruebaVeevart
 
+¿Cómo correr la aplicación con un IDE?
+
+Esta es la forma más sencilla.
+
+1. Descargar y descomprimir el proyecto.
+2. Abrir el proyecto desde el IDE.
+3. Click derecho en la clase Main.
+4. Click en "Run"
+
 ¿Cómo correr la aplicación sin un IDE?
 
 1. Descargar y descomprimir el proyecto.
