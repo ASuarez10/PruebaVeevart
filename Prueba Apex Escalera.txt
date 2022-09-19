@@ -1,0 +1,46 @@
+public class Escalera {
+    public static void escalera(){
+        
+        Map<Integer, Integer> dictEscalera = new Map<Integer, Integer>();
+        dictEscalera.put(3,11);
+        dictEscalera.put(6,17);
+        dictEscalera.put(9,18);
+        dictEscalera.put(10,12);
+        
+        Map<Integer, Integer> dictSerpiente = new Map<Integer, Integer>();
+        dictSerpiente.put(14,4);
+        dictSerpiente.put(19,8);
+        dictSerpiente.put(22,20);
+        dictSerpiente.put(24,16);
+       
+        Integer posicionJugador1 = 0;
+        
+        Boolean fin = false;
+       
+        while(!fin){
+            Integer dado = Integer.valueOf((Math.random()*6)+1);
+            posicionJugador1 = posicionJugador1 + dado;
+            
+            System.debug('Dado arroja ' + dado);
+            
+            if(posicionJugador1 == 25){
+                System.debug('Jugador llega al cuadro 25');
+                fin = !fin;
+            }else if(posicionJugador1 > 25){
+                System.debug('Jugador supera el cuadro 25');
+                fin = !fin;
+            }else{
+                System.debug('Jugador avanza al cuadro ' + posicionJugador1);
+                
+                if(dictEscalera.containsKey(posicionJugador1)){
+                    posicionJugador1 = dictEscalera.get(posicionJugador1);
+                    System.debug('Jugador sube por la escalera al cuadro ' + posicionJugador1);
+                }else if(dictSerpiente.containsKey(posicionJugador1)){
+                    posicionJugador1 = dictSerpiente.get(posicionJugador1);
+                    System.debug('Jugador desciende al cuadro ' + posicionJugador1);
+                }
+            }                
+        }
+        System.debug('Fin');
+    }
+}
